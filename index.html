@@ -22,8 +22,56 @@ button{margin-top:20px;padding:12px 25px;border:none;background:#ff66b2;color:wh
 .gallery-page{display:none;min-height:100vh;padding:40px 20px;position:relative;z-index:2;}
 .slider-container{max-width:700px;margin:30px auto;overflow:hidden;border-radius:25px;box-shadow:0 10px 20px rgba(255,105,180,.2);}
 .slider{display:flex;transition:transform .5s ease-in-out;}
-.slider img,.slider video{width:100%;flex-shrink:0;height:500px;object-fit:cover;background:black;}
+.slider img,
+.slider video{
+width:100%;
+max-width:100%;
+height:auto;
+max-height:80vh;
+flex-shrink:0;
+object-fit:contain;
+background:black;
+border-radius:20px;
+}
 .nav-btn{margin:10px;}
+@media(max-width:768px){
+
+h1{
+font-size:2rem;
+}
+
+.subtitle{
+font-size:1rem;
+padding:0 10px;
+}
+
+.message-box{
+width:95%;
+padding:20px;
+}
+
+.slider-container{
+max-width:95%;
+}
+
+.slider img,
+.slider video{
+max-height:70vh;
+}
+
+.music-btn{
+font-size:12px;
+padding:8px 14px;
+top:10px;
+right:10px;
+}
+
+button{
+font-size:.9rem;
+padding:10px 20px;
+}
+
+}
 </style>
 </head>
 <body>
