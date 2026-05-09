@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 2nd Month Anniversary</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+body{background:linear-gradient(to bottom,#fff,#ffe6f0);overflow-x:hidden;color:#d63384;text-align:center;}
+.flower{position:fixed;width:30px;animation:fall linear infinite;opacity:.8;z-index:0;}
+@keyframes fall{0%{transform:translateY(-50px) rotate(0deg);}100%{transform:translateY(110vh) rotate(360deg);}}
+.container{position:relative;z-index:2;padding:50px 20px;}
+h1{font-size:3rem;margin-top:20px;color:#ff4da6;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
+.subtitle{font-size:1.2rem;margin:20px auto;max-width:700px;}
+.heart{font-size:60px;animation:beat 1s infinite;}
+@keyframes beat{0%,100%{transform:scale(1);}50%{transform:scale(1.2);}}
+.message-box{background:white;border:3px dashed #ff99cc;border-radius:20px;padding:30px;margin:40px auto;width:80%;max-width:800px;box-shadow:0 10px 20px rgba(255,105,180,.2);}
+.message-box p{line-height:1.8;font-size:1.1rem;color:#cc3377;}
+button{margin-top:20px;padding:12px 25px;border:none;background:#ff66b2;color:white;border-radius:30px;cursor:pointer;font-size:1rem;transition:.3s;}
+.music-btn{position:fixed;top:20px;right:20px;z-index:99;background:#ff66b2;color:white;padding:10px 18px;border-radius:30px;cursor:pointer;}
+.gallery-page{display:none;min-height:100vh;padding:40px 20px;position:relative;z-index:2;}
+.slider-container{max-width:700px;margin:30px auto;overflow:hidden;border-radius:25px;box-shadow:0 10px 20px rgba(255,105,180,.2);}
+.slider{display:flex;transition:transform .5s ease-in-out;}
+.slider img,.slider video{width:100%;flex-shrink:0;height:500px;object-fit:cover;background:black;}
+.nav-btn{margin:10px;}
+</style>
+</head>
+<body>
+<audio id="bgMusic" loop><source src="music/music.mp3" type="audio/mpeg"></audio>
+<div class="music-btn" onclick="toggleMusic()">🎵 Putar Musik</div>
+<div id="flowers"></div>
+<div class="container" id="homePage">
+<div class="heart">💗</div>
+<h1>Happy 2nd Month Anniversary Sayang!</h1>
+<p class="subtitle">Happy Anniversary yang ke 2 bulan sayang! 60 hari yang penuh canda, tawa, sedih, dan bahagia karena kamu ada di sisi aku 🌸</p>
+<div class="message-box"><h2>💌 Kata-Kata Dari Hatiku Untukmu</h2><p>Untuk sayangku Nurhafizah yang jauh disana, aku makasih banget kamu udah ada di hidupku. Aku makasih banget karena kamu hari-hari aku ga bosen kaya biasanya. Karena kamu juga aku udah ada perubahan dalam diri aku. Makasih ya sayang, selama dua bulan ini kamu udah jadi alasan aku senyum, dan jadi orang yang selalu bikin hariku jauh lebih indah. Walaupun saat ini kita lagi diuji dengan keadaan dimana kita sulit komunikasi, aku akan terus menunggu sampai semuanya kembali normal lagi. Aku ga akan pindah ke lain hati, aku ga akan bosen, cinta aku ke kamu ga akan pudar. Aku berharap dengan keadaan ini, cinta kita makin besar ya sayang. Aku harap ini bukan cuma 2 bulan, tapi berbulan-bulan bahkan bertahun-tahun berikutnya tetap sama kamu. Lopyu more and more and more and more and more and moreeeeeeeee. 🌷</p></div>
+<button onclick="openGallery()">Klik Aku Ada Kejutan 🎁</button>
+</div>
+<div class="gallery-page" id="galleryPage">
+<h1>💞 Album Kenangan Kita</h1>
+<p class="subtitle">Geser terus sayang, masih banyak cerita di balik kita ✨</p>
+<div class="slider-container">
+<div class="slider" id="slider">
+<img src="img/foto1.png">
+<img src="img/foto2.png">
+<img src="img/foto3.png">
+<img src="img/foto4.png">
+<img src="img/foto5.png">
+<img src="img/foto6.png">
+<img src="img/foto7.png">
+<img src="img/foto8.png">
+<img src="img/foto9.png">
+<img src="img/foto10.png">
+<img src="img/foto11.png">
+<img src="img/foto12.png">
+<img src="img/foto13.png">
+<img src="img/foto14.png">
+<img src="img/foto15.png">
+<img src="img/foto16.png">
+<img src="img/foto17.png">
+<img src="img/foto21.png">
+<img src="img/foto20.png">
+<img src="img/foto19.png">
+<img src="img/foto18.png">
+<img src="img/foto22.png">
+<video controls><source src="vid/vidi.mp4" type="video/mp4"></video>
+<video controls><source src="vid/vidi2.mp4" type="video/mp4"></video>
+<video controls><source src="vid/lucuk.mp4" type="video/mp4"></video>
+<video controls><source src="vid/cp_luna_doll.mp4" type="video/mp4"></video>
+<video controls><source src="vid/payphone.mp4" type="video/mp4"></video>
+<video controls><source src="vid/robloxlucuk.mp4" type="video/mp4"></video>
+<video controls><source src="vid/gemas.mp4" type="video/mp4"></video>
+<video controls><source src="vid/robloxkicau.mp4" type="video/mp4"></video>
+</div>
+</div>
+<button class="nav-btn" onclick="prevSlide()">⬅ Sebelumnya</button>
+<button class="nav-btn" onclick="nextSlide()">Berikutnya ➡</button>
+</div>
+<script>
+const flowers=document.getElementById('flowers'); const flowerIcons=['🌸','🌷','🌺','💮']; for(let i=0;i<25;i++){let flower=document.createElement('div'); flower.classList.add('flower'); flower.innerHTML=flowerIcons[Math.floor(Math.random()*flowerIcons.length)]; flower.style.left=Math.random()*100+'vw'; flower.style.animationDuration=(5+Math.random()*5)+'s'; flower.style.fontSize=(20+Math.random()*20)+'px'; flowers.appendChild(flower);} 
+const music=document.getElementById('bgMusic'); const musicBtn=document.querySelector('.music-btn');
+function toggleMusic(){if(music.paused){music.play();musicBtn.innerHTML='⏸ Pause Musik';}else{music.pause();musicBtn.innerHTML='🎵 Putar Musik';}}
+function openGallery(){document.getElementById('homePage').style.display='none';document.getElementById('galleryPage').style.display='block';if(music.paused){music.play();musicBtn.innerHTML='⏸ Pause Musik';}}
+let currentSlide=0; const slider=document.getElementById('slider'); const totalSlides=document.querySelectorAll('#slider img, #slider video').length;
+function pauseAllVideos(){document.querySelectorAll('#slider video').forEach(v=>v.pause());}
+function updateSlide(){pauseAllVideos(); slider.style.transform=`translateX(-${currentSlide*100}%)`;}
+function nextSlide(){currentSlide=(currentSlide+1)%totalSlides; updateSlide();}
+function prevSlide(){currentSlide=(currentSlide-1+totalSlides)%totalSlides; updateSlide();}
+</script>
+</body>
+</html>
